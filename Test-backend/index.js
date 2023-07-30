@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+
 const app = express();
 
 // Enable cross-origin resource sharing
@@ -25,6 +26,8 @@ mongoose.connect('mongodb+srv://Vivek-testing:xTEU90IuGwDkGk5A@cluster0.hqirbyj.
 // Import and use the User Routes
 const userRoutes = require('./Routes/Routes');
 app.use('/users', userRoutes);
+
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
