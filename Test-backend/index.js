@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 
 const app = express();
@@ -26,6 +27,12 @@ mongoose.connect('mongodb+srv://Vivek-testing:xTEU90IuGwDkGk5A@cluster0.hqirbyj.
 // Import and use the User Routes
 const userRoutes = require('./Routes/Routes');
 app.use('/users', userRoutes);
+
+// Todo app .................................routes..............
+const todoAppRoutes = require('./Routes/TodoRoutes')
+app.use('/todo',todoAppRoutes)
+
+app.use('/images', express.static(path.join(__dirname, 'uploads')));
 
 
 
